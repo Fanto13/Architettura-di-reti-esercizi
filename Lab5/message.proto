@@ -1,0 +1,7 @@
+syntax = "proto2";
+message Request {
+
+    required string nomeRegione = 1;
+    required int32 numero_impianti = 2;
+}
+

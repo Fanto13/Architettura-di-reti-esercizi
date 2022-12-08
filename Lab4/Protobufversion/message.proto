@@ -1,0 +1,13 @@
+syntax = "proto2";
+message Request {
+
+    required string username = 1;
+    required string password = 2;
+    required float value = 3;
+}
+
+message Response {
+    required int32 integer = 1;
+    required int32 decimal = 2;
+
+}

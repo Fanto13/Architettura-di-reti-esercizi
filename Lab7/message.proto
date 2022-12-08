@@ -1,0 +1,6 @@
+syntax = "proto2";
+
+message Response {
+    required string stato = 1;
+    required float risultato_parziale = 2;
+}
