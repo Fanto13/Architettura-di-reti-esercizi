@@ -1,0 +1,4 @@
+message Parametri{
+	required string mese=1;
+	required int32 anno=2;	
+}
