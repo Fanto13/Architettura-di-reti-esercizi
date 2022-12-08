@@ -1,0 +1,40 @@
+Si progetti un'applicazione Client/Server che, utilizzando le socket,
+implementi un sistema di peer-review per la gestione degli articoli per una
+conferenza scientifica. Più precisamente, l'applicazione deve permettere ai
+revisori, incaricati di selezionare gli articoli per la conferenza, di
+stampare la lista di articoli da giudicare a essi assegnati.
+
+Il Client deve presentare la seguente interfaccia:
+
+	lista_articoli   server   porta
+
+dove server è il nome logico del Server e porta il numero di porta del
+servizio.
+
+Il Client si interfaccia con il revisore, da cui riceve (via terminale)
+indirizzo email e password.
+
+Per ogni richiesta, il Client deve comunicare le informazioni inserite dal
+revisore al Server. Il Server deve quindi verificare l'autorizzazione del
+revisoreinvocando un'apposita funzione, che si suppone essere già implementata
+e con il seguente prototipo:
+
+int autorizza(char *email_revisore, char *password);
+
+Se la funzione autorizza restituisce il valore 1, l'utente è autorizzato ad
+accedere al servizio. Il Server deve quindi selezionare le informazioni sugli
+articoli da revisionare assegnati al revisore e restituirle al Client,
+elencando gli articoli in ordine di data di scadenza decrescente. Altrimenti,
+il Server dovrà rifiutarsi di eseguire il servizio.
+
+A tal proposito, si supponga che, sul Server, le informazioni su tutti gli
+articoli da revisionare siano salvate in un file che contenga una riga (con
+data di scadenza per la revisione in formato YYYYMMDD, ID dell'articolo,
+titolo dell'articolo, indirizzo e-mail revisore, ecc.) per ciascuno degli
+articoli registrati nel sistema.
+
+Una volta ricevute le informazioni dal Server, il Client le stampa a video e
+termina.
+
+ATTENZIONE: Si realizzino il Client e il Server in C, ma il Client deve anche
+essere realizzato in Java.
